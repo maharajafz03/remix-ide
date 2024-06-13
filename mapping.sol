@@ -27,3 +27,47 @@ contract Dances{
     books[_author]=book(_author, _bookname, _amount);
   }
 }
+
+   // nexted mapping..
+
+contract book{
+    mapping (string => mapping (string => uint)) public bookprice;
+
+    function bookinfo(string memory _author, string memory _bookname, uint _amount) public {
+        bookprice[_author][_bookname] = _amount;
+    }
+}
+
+   // 2x nexted mapping
+   
+contract mobile{
+   mapping (uint => mapping (string => mapping (string => string))) public data;
+
+   function add(string memory _mobile, string memory _model, string memory _ram, uint _amount) public {
+    data[_amount][_mobile][_model] = _ram;
+   }
+}
+
+  // struct & mapping combination;
+
+contract Bikes {
+    struct Bike {
+        string brand;
+        string model;
+        string version;
+        uint amount;
+    }
+
+    mapping (uint => Bike) public motor;
+
+    function update(string memory _brand, string memory _model, string memory _version, uint _amount) public {
+        Bike memory newBike = Bike({
+            brand: _brand,
+            model: _model,
+            version: _version,
+            amount: _amount
+        });
+
+        motor[_amount]= newBike;
+    }
+}
