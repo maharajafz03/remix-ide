@@ -8,11 +8,11 @@ contract function{
 
 function tap() public view returns (uint) {
    return block.chainid;
-};
+}
 
 
 function click() public view returns (uint) {
    return block.number;
-};
+}
 
-};
+}
