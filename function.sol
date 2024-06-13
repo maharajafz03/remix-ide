@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 //functions reffer ://datatypes.sol
 
-contract function {
+contract function{
 
 function tap() public view returns (uint) {
    return block.chainid;
